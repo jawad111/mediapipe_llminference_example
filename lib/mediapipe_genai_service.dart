@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 class LlmService {
   static const MethodChannel _channel =
       MethodChannel('com.example.mediapipe_llminference_example/inference');
-  static const EventChannel _eventChannel = EventChannel('flutter_gemma_stream');
+  static const EventChannel _eventChannel = EventChannel('com.example.mediapipe_llminference_example/inference');
 
   Future<String> initializeModel() async {
     try {
