@@ -4,14 +4,14 @@ This Flutter example provides a minimal integration with custom LLM (Large Langu
 
 ### Tested on Devices:
 
-Samsung A31
-Samsung A15 
+    *Samsung A31
+    *Samsung A15 
 
 
 ### Considerations for project setup
 
-In AndroidManifest.xml added  android:largeHeap="true" in application Tag.
-In AndroidManifest.xml added <uses-native-library android:name="libOpenCL.so" android:required="false"/>
+    In AndroidManifest.xml added  android:largeHeap="true" in application Tag.
+    In AndroidManifest.xml added <uses-native-library android:name="libOpenCL.so" android:required="false"/>
 
 ---------------------------------
 
@@ -19,33 +19,28 @@ In AndroidManifest.xml added <uses-native-library android:name="libOpenCL.so" an
 ### Project Overview 
 **Widget Layer**
 
- 1. Initialize Model Button     
-     onPressed: calls           
-     LlmService.initializeModel()
-                                
- 2. Generate Response Button    
-     onPressed: calls           
-    LlmService.generateResponse()
+     1. Initialize Model Button     
+        onPressed: calls -> LlmService.initializeModel()
+                                   
+     2. Generate Response Button    
+        onPressed: calls -> LlmService.generateResponse()
 
 
 **Service Layer: LlmService**
 
- 1. initializeModel()           |
-     -> Calls MethodChannel.invokeMethod('initialize', {...}) 
-                                |
- 2. generateResponse()          
-     -> Calls MethodChannel.invokeMethod('generateResponse', {...}) 
+     1. initializeModel()-> Calls MethodChannel.invokeMethod('initialize', {...}) 
+                                    |
+     2. generateResponse() -> Calls MethodChannel.invokeMethod('generateResponse', {...}) 
 
 
 
 **Native Code: Kotlin**
 
- MethodChannel Handler (MainActivity.kt) 
+    MethodChannel Handler (MainActivity.kt) 
 
- 1. 'initialize'                        
-    -> Executes Kotlin logic to load the model 
- 2. 'generateResponse'                  
-     -> Executes logic to generate a response 
+     1. 'initialize' -> Executes Kotlin logic to load the model 
+     2. 'generateResponse' -> Executes logic to generate a response 
+
 
 
 
