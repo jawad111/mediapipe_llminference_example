@@ -13,6 +13,20 @@ This Flutter example provides a minimal integration with custom LLM (Large Langu
     In AndroidManifest.xml added  android:largeHeap="true" in application Tag.
     In AndroidManifest.xml added <uses-native-library android:name="libOpenCL.so" android:required="false"/>
 
+**Model Setup Instructions**
+
+- Download the Model from: https://www.kaggle.com/models/google/gemma/tfLite/
+
+- Rename the Model to model.bin for consistency with the app's configuration.
+
+- Upload the Model to the Device Path
+
+    /data/local/tmp/llm/model.bin
+
+- bash
+
+    adb push model.bin /data/local/tmp/llm/model.bin
+
 ---------------------------------
 
 
